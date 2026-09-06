@@ -1,205 +1,164 @@
-```javascript
-/* =====================================================
-   RAJNISH STUDY WORKSHEET
-   WORKSHEET DATA + FILTER SYSTEM
-===================================================== */
+// ==========================================
+// RAJNISH STUDY WORKSHEET
+// GRADE + SUBJECT + WORKSHEET SYSTEM
+// ==========================================
 
 
-/* ================= WORKSHEET DATA ================= */
+// ------------------------------------------
+// WORKSHEET DATA
+// ------------------------------------------
 
 const worksheets = [
 
+    // ---------- STANDARD 1 ----------
+
     {
         id: 1,
-        title: "સ્વર ઓળખો",
         grade: "1",
         subject: "gujarati",
-        icon: "🔤",
-        bg: "bg-purple",
+        title: "ગુજરાતી Worksheet 01",
+        icon: "📖",
+        description: "ધોરણ 1 ગુજરાતી પ્રેક્ટિસ",
         questions: 10,
-        time: "10 મિનિટ",
-        description: "ગુજરાતી સ્વરો ઓળખવાની મજેદાર Worksheet"
+        time: "10 મિનિટ"
     },
 
     {
         id: 2,
-        title: "1 થી 20 સંખ્યાઓ",
         grade: "1",
         subject: "math",
+        title: "ગણિત Worksheet 01",
         icon: "🔢",
-        bg: "bg-yellow",
+        description: "ધોરણ 1 ગણિત પ્રેક્ટિસ",
         questions: 10,
-        time: "10 મિનિટ",
-        description: "સંખ્યાઓ ઓળખો અને લખો"
+        time: "10 મિનિટ"
     },
 
     {
         id: 3,
-        title: "A to Z",
         grade: "1",
         subject: "english",
+        title: "English Worksheet 01",
         icon: "🔤",
-        bg: "bg-blue",
+        description: "ધોરણ 1 English Practice",
         questions: 10,
-        time: "10 મિનિટ",
-        description: "English Alphabet Practice"
+        time: "10 મિનિટ"
     },
+
+
+    // ---------- STANDARD 2 ----------
 
     {
         id: 4,
-        title: "સરવાળા – Basic",
         grade: "2",
-        subject: "math",
-        icon: "➕",
-        bg: "bg-green",
-        questions: 15,
-        time: "15 મિનિટ",
-        description: "સરળ સરવાળા શીખો"
+        subject: "gujarati",
+        title: "ગુજરાતી Worksheet 01",
+        icon: "📖",
+        description: "ધોરણ 2 ગુજરાતી પ્રેક્ટિસ",
+        questions: 10,
+        time: "10 મિનિટ"
     },
 
     {
         id: 5,
-        title: "ગુજરાતી શબ્દ ઓળખ",
         grade: "2",
-        subject: "gujarati",
-        icon: "📖",
-        bg: "bg-pink",
+        subject: "math",
+        title: "ગણિત Worksheet 01",
+        icon: "➕",
+        description: "ધોરણ 2 ગણિત પ્રેક્ટિસ",
         questions: 10,
-        time: "10 મિનિટ",
-        description: "સરળ ગુજરાતી શબ્દો ઓળખો"
+        time: "10 મિનિટ"
     },
+
+
+    // ---------- STANDARD 3 ----------
 
     {
         id: 6,
-        title: "English Nouns",
-        grade: "2",
-        subject: "english",
-        icon: "📝",
-        bg: "bg-purple",
-        questions: 15,
-        time: "15 મિનિટ",
-        description: "Noun ઓળખવાની Practice"
+        grade: "3",
+        subject: "gujarati",
+        title: "ગુજરાતી Worksheet 01",
+        icon: "📚",
+        description: "ધોરણ 3 ગુજરાતી પ્રેક્ટિસ",
+        questions: 10,
+        time: "15 મિનિટ"
     },
 
     {
         id: 7,
-        title: "ગુણાકાર",
         grade: "3",
         subject: "math",
+        title: "ગણિત Worksheet 01",
         icon: "✖️",
-        bg: "bg-yellow",
-        questions: 20,
-        time: "20 મિનિટ",
-        description: "Multiplication Practice"
+        description: "ધોરણ 3 ગણિત પ્રેક્ટિસ",
+        questions: 10,
+        time: "15 મિનિટ"
     },
+
+
+    // ---------- STANDARD 4 ----------
 
     {
         id: 8,
-        title: "ગુજરાતી વ્યાકરણ",
-        grade: "3",
+        grade: "4",
         subject: "gujarati",
-        icon: "📚",
-        bg: "bg-blue",
-        questions: 15,
-        time: "15 મિનિટ",
-        description: "મૂળભૂત ગુજરાતી વ્યાકરણ"
+        title: "ગુજરાતી Worksheet 01",
+        icon: "✍️",
+        description: "ધોરણ 4 ગુજરાતી પ્રેક્ટિસ",
+        questions: 10,
+        time: "15 મિનિટ"
     },
 
     {
         id: 9,
-        title: "Our Environment",
-        grade: "3",
-        subject: "environment",
-        icon: "🌱",
-        bg: "bg-green",
-        questions: 15,
-        time: "15 મિનિટ",
-        description: "પર્યાવરણ વિશે જાણો"
+        grade: "4",
+        subject: "math",
+        title: "ગણિત Worksheet 01",
+        icon: "➗",
+        description: "ધોરણ 4 ગણિત પ્રેક્ટિસ",
+        questions: 10,
+        time: "15 મિનિટ"
     },
+
+
+    // ---------- STANDARD 5 ----------
 
     {
         id: 10,
-        title: "ભાગાકાર",
-        grade: "4",
-        subject: "math",
-        icon: "➗",
-        bg: "bg-pink",
-        questions: 20,
-        time: "20 મિનિટ",
-        description: "Division Practice"
+        grade: "5",
+        subject: "gujarati",
+        title: "ગુજરાતી Worksheet 01",
+        icon: "📝",
+        description: "ધોરણ 5 ગુજરાતી પ્રેક્ટિસ",
+        questions: 10,
+        time: "20 મિનિટ"
     },
 
     {
         id: 11,
-        title: "English Grammar",
-        grade: "4",
-        subject: "english",
-        icon: "📘",
-        bg: "bg-purple",
-        questions: 20,
-        time: "20 મિનિટ",
-        description: "Basic English Grammar"
-    },
-
-    {
-        id: 12,
-        title: "ગુજરાતી વાક્ય રચના",
-        grade: "4",
-        subject: "gujarati",
-        icon: "✍️",
-        bg: "bg-yellow",
-        questions: 15,
-        time: "15 મિનિટ",
-        description: "સુંદર વાક્યો બનાવો"
-    },
-
-    {
-        id: 13,
-        title: "Fractions",
         grade: "5",
         subject: "math",
-        icon: "🍕",
-        bg: "bg-blue",
-        questions: 20,
-        time: "20 મિનિટ",
-        description: "Fractions સમજવાની Practice"
-    },
-
-    {
-        id: 14,
-        title: "English Vocabulary",
-        grade: "5",
-        subject: "english",
-        icon: "📗",
-        bg: "bg-green",
-        questions: 20,
-        time: "20 મિનિટ",
-        description: "New English Words"
-    },
-
-    {
-        id: 15,
-        title: "પર્યાવરણ – કુદરત",
-        grade: "5",
-        subject: "environment",
-        icon: "🌍",
-        bg: "bg-pink",
-        questions: 20,
-        time: "20 મિનિટ",
-        description: "Nature and Environment"
+        title: "ગણિત Worksheet 01",
+        icon: "📐",
+        description: "ધોરણ 5 ગણિત પ્રેક્ટિસ",
+        questions: 10,
+        time: "20 મિનિટ"
     }
 
 ];
 
 
-/* ================= CURRENT FILTER ================= */
+// ------------------------------------------
+// SELECTED FILTER
+// ------------------------------------------
 
 let selectedGrade = "all";
-
 let selectedSubject = "all";
 
 
-/* ================= DISPLAY WORKSHEETS ================= */
+// ------------------------------------------
+// DISPLAY WORKSHEETS
+// ------------------------------------------
 
 function displayWorksheets(list) {
 
@@ -209,23 +168,30 @@ function displayWorksheets(list) {
     const noResult =
         document.getElementById("noResult");
 
+    if (!container) {
+        console.error("worksheetContainer not found");
+        return;
+    }
 
     container.innerHTML = "";
 
 
     if (list.length === 0) {
 
-        noResult.style.display = "block";
+        if (noResult) {
+            noResult.style.display = "block";
+        }
 
         return;
-
     }
 
 
-    noResult.style.display = "none";
+    if (noResult) {
+        noResult.style.display = "none";
+    }
 
 
-    list.forEach((worksheet) => {
+    list.forEach(function (worksheet) {
 
         const card =
             document.createElement("div");
@@ -235,13 +201,13 @@ function displayWorksheets(list) {
 
         card.innerHTML = `
 
-            <div class="card-top ${worksheet.bg}">
+            <div class="card-top">
 
                 <span class="card-number">
                     Worksheet ${worksheet.id}
                 </span>
 
-                <span>
+                <span class="worksheet-icon">
                     ${worksheet.icon}
                 </span>
 
@@ -278,14 +244,13 @@ function displayWorksheets(list) {
 
                 <button
                     class="start-btn"
-                    onclick="startWorksheet(${worksheet.id})">
+                    onclick="openWorksheet(${worksheet.id})">
 
-                    🚀 Start Worksheet
+                    🚀 Worksheet શરૂ કરો
 
                 </button>
 
             </div>
-
         `;
 
 
@@ -296,20 +261,23 @@ function displayWorksheets(list) {
 }
 
 
-/* ================= FILTER FUNCTION ================= */
+// ------------------------------------------
+// FILTER WORKSHEETS
+// ------------------------------------------
 
 function filterWorksheets() {
 
+    const searchInput =
+        document.getElementById("searchInput");
+
     const search =
-        document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
+        searchInput
+            ? searchInput.value.toLowerCase().trim()
+            : "";
 
 
     const filtered =
-        worksheets.filter((worksheet) => {
+        worksheets.filter(function (worksheet) {
 
             const gradeMatch =
                 selectedGrade === "all" ||
@@ -323,12 +291,12 @@ function filterWorksheets() {
 
             const searchMatch =
                 worksheet.title
-                .toLowerCase()
-                .includes(search) ||
+                    .toLowerCase()
+                    .includes(search) ||
 
                 worksheet.description
-                .toLowerCase()
-                .includes(search);
+                    .toLowerCase()
+                    .includes(search);
 
 
             return (
@@ -345,7 +313,9 @@ function filterWorksheets() {
 }
 
 
-/* ================= GRADE FILTER ================= */
+// ------------------------------------------
+// GRADE BUTTON
+// ------------------------------------------
 
 function setGrade(grade, button) {
 
@@ -354,7 +324,7 @@ function setGrade(grade, button) {
 
     document
         .querySelectorAll(".grade-btn")
-        .forEach((btn) => {
+        .forEach(function (btn) {
 
             btn.classList.remove("active");
 
@@ -369,7 +339,9 @@ function setGrade(grade, button) {
 }
 
 
-/* ================= SUBJECT FILTER ================= */
+// ------------------------------------------
+// SUBJECT BUTTON
+// ------------------------------------------
 
 function setSubject(subject, button) {
 
@@ -378,7 +350,7 @@ function setSubject(subject, button) {
 
     document
         .querySelectorAll(".subject-btn")
-        .forEach((btn) => {
+        .forEach(function (btn) {
 
             btn.classList.remove("active");
 
@@ -393,14 +365,18 @@ function setSubject(subject, button) {
 }
 
 
-/* ================= START WORKSHEET ================= */
+// ==========================================
+// OPEN WORKSHEET
+// ==========================================
 
-function startWorksheet(id) {
+function openWorksheet(id) {
 
     const worksheet =
-        worksheets.find(
-            (item) => item.id === id
-        );
+        worksheets.find(function (item) {
+
+            return item.id === id;
+
+        });
 
 
     if (!worksheet) {
@@ -412,52 +388,266 @@ function startWorksheet(id) {
     }
 
 
-    /*
-       અત્યારે Demo માટે alert.
+    // Hide worksheet list
 
-       આગળ અહીં:
+    const listSection =
+        document.getElementById("worksheets");
 
-       worksheet.html?id=1
+    if (listSection) {
+        listSection.style.display = "none";
+    }
 
-       અથવા
 
-       Supabase Worksheet System
+    const container =
+        document.getElementById("worksheetContainer");
 
-       સાથે જોડશું.
-    */
+    if (container) {
+        container.style.display = "none";
+    }
+
+
+    const noResult =
+        document.getElementById("noResult");
+
+    if (noResult) {
+        noResult.style.display = "none";
+    }
+
+
+    // Create worksheet screen
+
+    let worksheetPage =
+        document.getElementById("worksheetPage");
+
+
+    if (!worksheetPage) {
+
+        worksheetPage =
+            document.createElement("section");
+
+        worksheetPage.id =
+            "worksheetPage";
+
+        document.body.appendChild(worksheetPage);
+
+    }
+
+
+    worksheetPage.style.display = "block";
+
+
+    worksheetPage.innerHTML = `
+
+        <div class="worksheet-page">
+
+            <button
+                class="back-btn"
+                onclick="backToWorksheets()">
+
+                ← પાછા Worksheets પર
+
+            </button>
+
+
+            <div class="worksheet-header">
+
+                <div class="worksheet-big-icon">
+                    ${worksheet.icon}
+                </div>
+
+                <h1>
+                    ${worksheet.title}
+                </h1>
+
+                <p>
+                    🎓 ધોરણ ${worksheet.grade}
+                    &nbsp; | &nbsp;
+                    📚 ${getSubjectName(worksheet.subject)}
+                </p>
+
+            </div>
+
+
+            <div class="student-box">
+
+                <label>
+                    👦 વિદ્યાર્થીનું નામ
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="વિદ્યાર્થીનું નામ લખો"
+                >
+
+            </div>
+
+
+            <div class="question-area">
+
+                <h2>
+                    📝 Worksheet
+                </h2>
+
+                <div class="question-placeholder">
+
+                    <div class="big-emoji">
+                        ✏️
+                    </div>
+
+                    <h3>
+                        અહીં તમારા પ્રશ્નો આવશે
+                    </h3>
+
+                    <p>
+                        તમે પ્રશ્નો આપશો તે પ્રમાણે
+                        આ Worksheet તૈયાર કરવામાં આવશે.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="submit-btn"
+                onclick="submitWorksheet()">
+
+                ✅ Submit Worksheet
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+// ------------------------------------------
+// SUBJECT NAME
+// ------------------------------------------
+
+function getSubjectName(subject) {
+
+    const subjects = {
+
+        gujarati: "ગુજરાતી",
+
+        english: "English",
+
+        math: "ગણિત",
+
+        environment: "પર્યાવરણ"
+
+    };
+
+
+    return subjects[subject] || subject;
+
+}
+
+
+// ------------------------------------------
+// BACK BUTTON
+// ------------------------------------------
+
+function backToWorksheets() {
+
+    const worksheetPage =
+        document.getElementById("worksheetPage");
+
+    if (worksheetPage) {
+        worksheetPage.style.display = "none";
+    }
+
+
+    const listSection =
+        document.getElementById("worksheets");
+
+    if (listSection) {
+        listSection.style.display = "block";
+    }
+
+
+    const container =
+        document.getElementById("worksheetContainer");
+
+    if (container) {
+        container.style.display = "grid";
+    }
+
+
+    filterWorksheets();
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+// ------------------------------------------
+// SUBMIT
+// ------------------------------------------
+
+function submitWorksheet() {
+
+    const name =
+        document.getElementById("studentName");
+
+
+    if (!name || name.value.trim() === "") {
+
+        alert(
+            "કૃપા કરીને પહેલા વિદ્યાર્થીનું નામ લખો."
+        );
+
+        return;
+
+    }
 
 
     alert(
-        "🚀 " +
-        worksheet.title +
-        "\n\n" +
-
-        "ધોરણ: " +
-        worksheet.grade +
-
-        "\nવિષય: " +
-        worksheet.subject +
-
-        "\n\nWorksheet હવે શરૂ થશે!"
+        "✅ Worksheet Submit થઈ ગઈ!\n\n" +
+        "વિદ્યાર્થી: " +
+        name.value.trim()
     );
 
 }
 
 
-/* ================= SCROLL ================= */
+// ------------------------------------------
+// SCROLL
+// ------------------------------------------
 
 function scrollToWorksheets() {
 
-    document
-        .getElementById("worksheets")
-        .scrollIntoView({
+    const section =
+        document.getElementById("worksheets");
+
+    if (section) {
+
+        section.scrollIntoView({
             behavior: "smooth"
         });
+
+    }
 
 }
 
 
-/* ================= INITIAL LOAD ================= */
+// ------------------------------------------
+// START
+// ------------------------------------------
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -467,5 +657,3 @@ document.addEventListener(
 
     }
 );
-```
-

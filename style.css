@@ -1,1 +1,734 @@
+```css
+/* =====================================================
+   RAJNISH STUDY WORKSHEET
+   COLORFUL EDUCATIONAL WEBSITE
+===================================================== */
+
+
+/* ================= RESET ================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family:
+        Arial,
+        "Noto Sans Gujarati",
+        sans-serif;
+
+    background: #f5f7ff;
+
+    color: #202640;
+
+    line-height: 1.6;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b4bdb,
+            #7b5cff
+        );
+
+    color: white;
+
+    padding: 18px 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.12);
+}
+
+
+.logo-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.logo {
+
+    width: 55px;
+
+    height: 55px;
+
+    background: white;
+
+    color: #5b4bdb;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.15);
+}
+
+
+.logo-area h1 {
+
+    font-size: 25px;
+
+    margin-bottom: 2px;
+}
+
+
+.logo-area p {
+
+    font-size: 13px;
+
+    opacity: 0.9;
+}
+
+
+.header-icon {
+
+    font-size: 45px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+
+    min-height: 300px;
+
+    padding: 45px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff1c9,
+            #ffe0f0
+        );
+
+    overflow: hidden;
+}
+
+
+.hero-content {
+
+    max-width: 650px;
+}
+
+
+.hero h2 {
+
+    font-size: 34px;
+
+    color: #3e328c;
+
+    margin-bottom: 10px;
+}
+
+
+.hero p {
+
+    font-size: 18px;
+
+    color: #555;
+
+    margin-bottom: 22px;
+}
+
+
+.hero-buttons button {
+
+    border: none;
+
+    background: #ff6b35;
+
+    color: white;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(255,107,53,0.3);
+
+    transition: 0.3s;
+}
+
+
+.hero-buttons button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 20px rgba(255,107,53,0.4);
+}
+
+
+.hero-image {
+
+    font-size: 90px;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* ================= FILTER SECTION ================= */
+
+.filter-section {
+
+    background: white;
+
+    margin: 25px auto;
+
+    padding: 30px;
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.07);
+}
+
+
+.filter-section > h2 {
+
+    text-align: center;
+
+    color: #40348d;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-box {
+
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    padding: 14px 18px;
+
+    border: 2px solid #e0e3f5;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+.search-box input:focus {
+
+    border-color: #6c5ce7;
+
+    box-shadow:
+        0 0 0 4px rgba(108,92,231,0.1);
+}
+
+
+/* ================= FILTER GROUP ================= */
+
+.filter-group {
+
+    margin-top: 22px;
+}
+
+
+.filter-group h3 {
+
+    text-align: center;
+
+    margin-bottom: 12px;
+
+    color: #444;
+}
+
+
+.filter-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+.filter-buttons button {
+
+    border: 2px solid #e2e3ef;
+
+    background: #fff;
+
+    padding: 9px 18px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.25s;
+}
+
+
+.filter-buttons button:hover {
+
+    transform: translateY(-2px);
+
+    border-color: #6c5ce7;
+}
+
+
+.grade-btn.active {
+
+    background: #6c5ce7;
+
+    color: white;
+
+    border-color: #6c5ce7;
+}
+
+
+.subject-btn.active {
+
+    background: #ff7675;
+
+    color: white;
+
+    border-color: #ff7675;
+}
+
+
+/* ================= WORKSHEET GRID ================= */
+
+.worksheet-grid {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 30px auto 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 22px;
+}
+
+
+/* ================= WORKSHEET CARD ================= */
+
+.worksheet-card {
+
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 6px 20px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+
+.worksheet-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.13);
+}
+
+
+/* ================= CARD TOP ================= */
+
+.card-top {
+
+    height: 125px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 55px;
+
+    position: relative;
+}
+
+
+.card-number {
+
+    position: absolute;
+
+    top: 10px;
+
+    left: 10px;
+
+    background: rgba(255,255,255,0.9);
+
+    padding: 4px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* Different backgrounds */
+
+.bg-purple {
+    background: #e8e2ff;
+}
+
+.bg-yellow {
+    background: #fff1bd;
+}
+
+.bg-blue {
+    background: #dceeff;
+}
+
+.bg-green {
+    background: #dff8e8;
+}
+
+.bg-pink {
+    background: #ffe0eb;
+}
+
+
+/* ================= CARD BODY ================= */
+
+.card-body {
+
+    padding: 18px;
+}
+
+
+.card-body h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+
+    color: #252a50;
+}
+
+
+.card-body p {
+
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+
+.badges {
+
+    display: flex;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+    margin: 12px 0;
+}
+
+
+.badge {
+
+    padding: 4px 10px;
+
+    border-radius: 15px;
+
+    background: #f0efff;
+
+    color: #5146a5;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* ================= START BUTTON ================= */
+
+.start-btn {
+
+    width: 100%;
+
+    padding: 11px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #5b4bdb;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.start-btn:hover {
+
+    background: #4535bd;
+
+    transform: scale(1.02);
+}
+
+
+/* ================= NO RESULT ================= */
+
+.no-result {
+
+    text-align: center;
+
+    padding: 50px;
+
+    color: #777;
+}
+
+
+.no-result h3 {
+
+    margin: 10px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    background: #272343;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px 15px;
+
+    margin-top: 30px;
+}
+
+
+footer h3 {
+
+    margin-bottom: 5px;
+}
+
+
+footer p {
+
+    opacity: 0.8;
+}
+
+
+.copyright {
+
+    margin-top: 15px;
+
+    font-size: 12px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .header {
+
+        padding: 15px 5%;
+    }
+
+
+    .logo-area h1 {
+
+        font-size: 20px;
+    }
+
+
+    .header-icon {
+
+        font-size: 32px;
+    }
+
+
+    .hero {
+
+        padding: 35px 7%;
+
+        text-align: center;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .hero h2 {
+
+        font-size: 27px;
+    }
+
+
+    .hero p {
+
+        font-size: 16px;
+    }
+
+
+    .hero-image {
+
+        font-size: 65px;
+    }
+
+
+    .filter-section {
+
+        width: 94%;
+
+        padding: 22px 15px;
+    }
+
+
+    .worksheet-grid {
+
+        width: 94%;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+
+    .card-top {
+
+        height: 100px;
+
+        font-size: 42px;
+    }
+
+
+    .card-body {
+
+        padding: 13px;
+    }
+
+
+    .card-body h3 {
+
+        font-size: 15px;
+    }
+
+
+    .card-body p {
+
+        font-size: 12px;
+    }
+
+
+    .start-btn {
+
+        font-size: 13px;
+
+        padding: 9px;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .worksheet-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+```
 

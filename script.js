@@ -1,12 +1,13 @@
+```javascript
 // ==========================================
 // RAJNISH STUDY WORKSHEET
-// GRADE + SUBJECT + WORKSHEET SYSTEM
+// GRADE + SUBJECT + MCQ SYSTEM
 // ==========================================
 
 
-// ------------------------------------------
+// ==========================================
 // WORKSHEET DATA
-// ------------------------------------------
+// ==========================================
 
 const worksheets = [
 
@@ -41,6 +42,19 @@ const worksheets = [
         title: "English Worksheet 01",
         icon: "🔤",
         description: "ધોરણ 1 English Practice",
+        questions: 10,
+        time: "10 મિનિટ"
+    },
+
+    // ⭐ STANDARD 1 ENVIRONMENT
+
+    {
+        id: 12,
+        grade: "1",
+        subject: "environment",
+        title: "પર્યાવરણ Worksheet 01",
+        icon: "🌱",
+        description: "ધોરણ 1 પર્યાવરણ — 10 MCQ",
         questions: 10,
         time: "10 મિનિટ"
     },
@@ -148,17 +162,99 @@ const worksheets = [
 ];
 
 
-// ------------------------------------------
-// SELECTED FILTER
-// ------------------------------------------
+// ==========================================
+// MCQ QUESTIONS
+// ==========================================
+
+const worksheetQuestions = {
+
+    // ======================================
+    // STANDARD 1 ENVIRONMENT - WORKSHEET 01
+    // ======================================
+
+    12: [
+
+        {
+            question: "આપણે કઈ વસ્તુથી જોઈ શકીએ છીએ?",
+            options: ["કાન", "આંખ", "નાક", "હાથ"],
+            answer: 1
+        },
+
+        {
+            question: "આપણે કઈ વસ્તુથી સાંભળી શકીએ છીએ?",
+            options: ["આંખ", "કાન", "પગ", "નાક"],
+            answer: 1
+        },
+
+        {
+            question: "સૂર્ય આપણને શું આપે છે?",
+            options: ["પ્રકાશ અને ગરમી", "પાણી", "દૂધ", "છાંયો"],
+            answer: 0
+        },
+
+        {
+            question: "નીચેનામાંથી કયું પ્રાણી છે?",
+            options: ["વૃક્ષ", "ગાય", "પથ્થર", "પાણી"],
+            answer: 1
+        },
+
+        {
+            question: "છોડને વધવા માટે શું જરૂરી છે?",
+            options: ["પાણી", "પથ્થર", "પેન્સિલ", "જૂતું"],
+            answer: 0
+        },
+
+        {
+            question: "આપણે પાણી શેના માટે પીએ છીએ?",
+            options: ["તરસ છીપાવવા", "રમવા", "લખવા", "સૂવા"],
+            answer: 0
+        },
+
+        {
+            question: "નીચેનામાંથી કયું ફળ છે?",
+            options: ["કેરી", "બટાકા", "ડુંગળી", "ગાજર"],
+            answer: 0
+        },
+
+        {
+            question: "આપણે દાંત સાફ કરવા માટે શું વાપરીએ છીએ?",
+            options: ["ટૂથબ્રશ", "પેન્સિલ", "ચમચી", "પતંગ"],
+            answer: 0
+        },
+
+        {
+            question: "વરસાદ કયા ઋતુમાં વધુ પડે છે?",
+            options: ["ઉનાળો", "ચોમાસું", "શિયાળો", "વસંત"],
+            answer: 1
+        },
+
+        {
+            question: "ઘર સાફ રાખવા માટે આપણે શું કરવું જોઈએ?",
+            options: [
+                "કચરો ફેંકવો",
+                "કચરો કચરાપેટીમાં નાખવો",
+                "પાણી ઢોળવું",
+                "ગંદકી કરવી"
+            ],
+            answer: 1
+        }
+
+    ]
+
+};
+
+
+// ==========================================
+// FILTER VARIABLES
+// ==========================================
 
 let selectedGrade = "all";
 let selectedSubject = "all";
 
 
-// ------------------------------------------
+// ==========================================
 // DISPLAY WORKSHEETS
-// ------------------------------------------
+// ==========================================
 
 function displayWorksheets(list) {
 
@@ -175,7 +271,6 @@ function displayWorksheets(list) {
 
     container.innerHTML = "";
 
-
     if (list.length === 0) {
 
         if (noResult) {
@@ -185,11 +280,9 @@ function displayWorksheets(list) {
         return;
     }
 
-
     if (noResult) {
         noResult.style.display = "none";
     }
-
 
     list.forEach(function (worksheet) {
 
@@ -197,7 +290,6 @@ function displayWorksheets(list) {
             document.createElement("div");
 
         card.className = "worksheet-card";
-
 
         card.innerHTML = `
 
@@ -213,7 +305,6 @@ function displayWorksheets(list) {
 
             </div>
 
-
             <div class="card-body">
 
                 <h3>
@@ -223,7 +314,6 @@ function displayWorksheets(list) {
                 <p>
                     ${worksheet.description}
                 </p>
-
 
                 <div class="badges">
 
@@ -241,7 +331,6 @@ function displayWorksheets(list) {
 
                 </div>
 
-
                 <button
                     class="start-btn"
                     onclick="openWorksheet(${worksheet.id})">
@@ -251,8 +340,8 @@ function displayWorksheets(list) {
                 </button>
 
             </div>
-        `;
 
+        `;
 
         container.appendChild(card);
 
@@ -261,9 +350,9 @@ function displayWorksheets(list) {
 }
 
 
-// ------------------------------------------
-// FILTER WORKSHEETS
-// ------------------------------------------
+// ==========================================
+// FILTER
+// ==========================================
 
 function filterWorksheets() {
 
@@ -275,7 +364,6 @@ function filterWorksheets() {
             ? searchInput.value.toLowerCase().trim()
             : "";
 
-
     const filtered =
         worksheets.filter(function (worksheet) {
 
@@ -283,11 +371,9 @@ function filterWorksheets() {
                 selectedGrade === "all" ||
                 worksheet.grade === selectedGrade;
 
-
             const subjectMatch =
                 selectedSubject === "all" ||
                 worksheet.subject === selectedSubject;
-
 
             const searchMatch =
                 worksheet.title
@@ -298,7 +384,6 @@ function filterWorksheets() {
                     .toLowerCase()
                     .includes(search);
 
-
             return (
                 gradeMatch &&
                 subjectMatch &&
@@ -307,20 +392,18 @@ function filterWorksheets() {
 
         });
 
-
     displayWorksheets(filtered);
 
 }
 
 
-// ------------------------------------------
+// ==========================================
 // GRADE BUTTON
-// ------------------------------------------
+// ==========================================
 
 function setGrade(grade, button) {
 
     selectedGrade = grade;
-
 
     document
         .querySelectorAll(".grade-btn")
@@ -330,23 +413,20 @@ function setGrade(grade, button) {
 
         });
 
-
     button.classList.add("active");
-
 
     filterWorksheets();
 
 }
 
 
-// ------------------------------------------
+// ==========================================
 // SUBJECT BUTTON
-// ------------------------------------------
+// ==========================================
 
 function setSubject(subject, button) {
 
     selectedSubject = subject;
-
 
     document
         .querySelectorAll(".subject-btn")
@@ -356,9 +436,7 @@ function setSubject(subject, button) {
 
         });
 
-
     button.classList.add("active");
-
 
     filterWorksheets();
 
@@ -377,7 +455,6 @@ function openWorksheet(id) {
             return item.id === id;
 
         });
-
 
     if (!worksheet) {
 
@@ -414,7 +491,7 @@ function openWorksheet(id) {
     }
 
 
-    // Create worksheet screen
+    // Create worksheet page
 
     let worksheetPage =
         document.getElementById("worksheetPage");
@@ -436,90 +513,229 @@ function openWorksheet(id) {
     worksheetPage.style.display = "block";
 
 
-    worksheetPage.innerHTML = `
+    // ======================================
+    // CHECK WHETHER QUESTIONS EXIST
+    // ======================================
 
-        <div class="worksheet-page">
-
-            <button
-                class="back-btn"
-                onclick="backToWorksheets()">
-
-                ← પાછા Worksheets પર
-
-            </button>
+    const questions =
+        worksheetQuestions[id];
 
 
-            <div class="worksheet-header">
+    // ======================================
+    // IF MCQ QUESTIONS EXIST
+    // ======================================
 
-                <div class="worksheet-big-icon">
-                    ${worksheet.icon}
-                </div>
+    if (questions) {
 
-                <h1>
-                    ${worksheet.title}
-                </h1>
+        let questionHTML = "";
 
-                <p>
-                    🎓 ધોરણ ${worksheet.grade}
-                    &nbsp; | &nbsp;
-                    📚 ${getSubjectName(worksheet.subject)}
-                </p>
+        questions.forEach(function (item, index) {
 
-            </div>
+            let optionsHTML = "";
 
+            item.options.forEach(function (option, optionIndex) {
 
-            <div class="student-box">
+                optionsHTML += `
 
-                <label>
-                    👦 વિદ્યાર્થીનું નામ
-                </label>
+                    <label class="mcq-option">
 
-                <input
-                    type="text"
-                    id="studentName"
-                    placeholder="વિદ્યાર્થીનું નામ લખો"
-                >
+                        <input
+                            type="radio"
+                            name="question${index}"
+                            value="${optionIndex}">
 
-            </div>
+                        <span>
+                            ${option}
+                        </span>
+
+                    </label>
+
+                `;
+
+            });
 
 
-            <div class="question-area">
+            questionHTML += `
 
-                <h2>
-                    📝 Worksheet
-                </h2>
-
-                <div class="question-placeholder">
-
-                    <div class="big-emoji">
-                        ✏️
-                    </div>
+                <div class="mcq-question">
 
                     <h3>
-                        અહીં તમારા પ્રશ્નો આવશે
+                        ${index + 1}. ${item.question}
                     </h3>
 
+                    <div class="mcq-options">
+                        ${optionsHTML}
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+
+        worksheetPage.innerHTML = `
+
+            <div class="worksheet-page">
+
+                <button
+                    class="back-btn"
+                    onclick="backToWorksheets()">
+
+                    ← પાછા Worksheets પર
+
+                </button>
+
+
+                <div class="worksheet-header">
+
+                    <div class="worksheet-big-icon">
+                        ${worksheet.icon}
+                    </div>
+
+                    <h1>
+                        ${worksheet.title}
+                    </h1>
+
                     <p>
-                        તમે પ્રશ્નો આપશો તે પ્રમાણે
-                        આ Worksheet તૈયાર કરવામાં આવશે.
+                        🎓 ધોરણ ${worksheet.grade}
+                        &nbsp; | &nbsp;
+                        📚 ${getSubjectName(worksheet.subject)}
                     </p>
 
                 </div>
 
+
+                <div class="student-box">
+
+                    <label>
+                        👦 વિદ્યાર્થીનું નામ
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="વિદ્યાર્થીનું નામ લખો">
+
+                </div>
+
+
+                <div class="question-area">
+
+                    <h2>
+                        📝 10 MCQ પ્રશ્નો
+                    </h2>
+
+                    ${questionHTML}
+
+                </div>
+
+
+                <button
+                    class="submit-btn"
+                    onclick="submitWorksheet(${worksheet.id})">
+
+                    ✅ Worksheet Submit કરો
+
+                </button>
+
             </div>
 
+        `;
 
-            <button
-                class="submit-btn"
-                onclick="submitWorksheet()">
+    }
 
-                ✅ Submit Worksheet
+    // ======================================
+    // OTHER WORKSHEETS
+    // ======================================
 
-            </button>
+    else {
 
-        </div>
+        worksheetPage.innerHTML = `
 
-    `;
+            <div class="worksheet-page">
+
+                <button
+                    class="back-btn"
+                    onclick="backToWorksheets()">
+
+                    ← પાછા Worksheets પર
+
+                </button>
+
+
+                <div class="worksheet-header">
+
+                    <div class="worksheet-big-icon">
+                        ${worksheet.icon}
+                    </div>
+
+                    <h1>
+                        ${worksheet.title}
+                    </h1>
+
+                    <p>
+                        🎓 ધોરણ ${worksheet.grade}
+                        &nbsp; | &nbsp;
+                        📚 ${getSubjectName(worksheet.subject)}
+                    </p>
+
+                </div>
+
+
+                <div class="student-box">
+
+                    <label>
+                        👦 વિદ્યાર્થીનું નામ
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="વિદ્યાર્થીનું નામ લખો">
+
+                </div>
+
+
+                <div class="question-area">
+
+                    <h2>
+                        📝 Worksheet
+                    </h2>
+
+                    <div class="question-placeholder">
+
+                        <div class="big-emoji">
+                            ✏️
+                        </div>
+
+                        <h3>
+                            પ્રશ્નો ટૂંક સમયમાં ઉમેરવામાં આવશે
+                        </h3>
+
+                        <p>
+                            આ Worksheet માટેના પ્રશ્નો
+                            હજુ ઉમેરવાના બાકી છે.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="submit-btn"
+                    onclick="submitWorksheet(${worksheet.id})">
+
+                    ✅ Worksheet Submit કરો
+
+                </button>
+
+            </div>
+
+        `;
+
+    }
 
 
     window.scrollTo({
@@ -530,9 +746,9 @@ function openWorksheet(id) {
 }
 
 
-// ------------------------------------------
+// ==========================================
 // SUBJECT NAME
-// ------------------------------------------
+// ==========================================
 
 function getSubjectName(subject) {
 
@@ -548,15 +764,14 @@ function getSubjectName(subject) {
 
     };
 
-
     return subjects[subject] || subject;
 
 }
 
 
-// ------------------------------------------
+// ==========================================
 // BACK BUTTON
-// ------------------------------------------
+// ==========================================
 
 function backToWorksheets() {
 
@@ -595,17 +810,18 @@ function backToWorksheets() {
 }
 
 
-// ------------------------------------------
-// SUBMIT
-// ------------------------------------------
+// ==========================================
+// SUBMIT WORKSHEET
+// ==========================================
 
-function submitWorksheet() {
+function submitWorksheet(id) {
 
-    const name =
+    const nameInput =
         document.getElementById("studentName");
 
 
-    if (!name || name.value.trim() === "") {
+    if (!nameInput ||
+        nameInput.value.trim() === "") {
 
         alert(
             "કૃપા કરીને પહેલા વિદ્યાર્થીનું નામ લખો."
@@ -616,18 +832,178 @@ function submitWorksheet() {
     }
 
 
-    alert(
-        "✅ Worksheet Submit થઈ ગઈ!\n\n" +
-        "વિદ્યાર્થી: " +
-        name.value.trim()
-    );
+    const questions =
+        worksheetQuestions[id];
+
+
+    // If this worksheet has no MCQ
+
+    if (!questions) {
+
+        alert(
+            "✅ Worksheet Submit થઈ ગઈ!\n\n" +
+            "વિદ્યાર્થી: " +
+            nameInput.value.trim()
+        );
+
+        return;
+
+    }
+
+
+    // ======================================
+    // CHECK ANSWERS
+    // ======================================
+
+    let score = 0;
+
+    let unanswered = 0;
+
+
+    questions.forEach(function (item, index) {
+
+        const selected =
+            document.querySelector(
+                `input[name="question${index}"]:checked`
+            );
+
+
+        if (!selected) {
+
+            unanswered++;
+
+            return;
+
+        }
+
+
+        if (
+            Number(selected.value) ===
+            item.answer
+        ) {
+
+            score++;
+
+        }
+
+    });
+
+
+    // ======================================
+    // REQUIRE ALL QUESTIONS
+    // ======================================
+
+    if (unanswered > 0) {
+
+        alert(
+            "⚠️ કૃપા કરીને બધા 10 પ્રશ્નોના જવાબ આપો.\n\n" +
+            "બાકી પ્રશ્નો: " +
+            unanswered
+        );
+
+        return;
+
+    }
+
+
+    // ======================================
+    // RESULT
+    // ======================================
+
+    let message = "";
+
+    if (score === 10) {
+
+        message =
+            "🏆 ખૂબ જ સરસ!\n" +
+            "બધા જવાબ સાચા છે!";
+
+    }
+
+    else if (score >= 7) {
+
+        message =
+            "👏 ખૂબ સારું પરિણામ!";
+
+    }
+
+    else if (score >= 5) {
+
+        message =
+            "👍 સારું પ્રયત્ન!";
+
+    }
+
+    else {
+
+        message =
+            "💪 વધુ પ્રેક્ટિસ કરો, તમે જરૂર સફળ થશો!";
+
+    }
+
+
+    // Show result page
+
+    const worksheetPage =
+        document.getElementById("worksheetPage");
+
+
+    worksheetPage.innerHTML = `
+
+        <div class="worksheet-page result-page">
+
+            <div class="result-icon">
+                🏆
+            </div>
+
+            <h1>
+                Worksheet પૂર્ણ!
+            </h1>
+
+            <h2>
+                👦 ${nameInput.value.trim()}
+            </h2>
+
+            <div class="score-box">
+
+                <div class="score">
+                    ${score} / ${questions.length}
+                </div>
+
+                <p>
+                    તમારો સ્કોર
+                </p>
+
+            </div>
+
+            <h3>
+                ${message}
+            </h3>
+
+            <button
+                class="back-btn"
+                onclick="backToWorksheets()">
+
+                ← ફરી Worksheets પર જાઓ
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 }
 
 
-// ------------------------------------------
+// ==========================================
 // SCROLL
-// ------------------------------------------
+// ==========================================
 
 function scrollToWorksheets() {
 
@@ -645,9 +1021,9 @@ function scrollToWorksheets() {
 }
 
 
-// ------------------------------------------
+// ==========================================
 // START
-// ------------------------------------------
+// ==========================================
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -657,3 +1033,4 @@ document.addEventListener(
 
     }
 );
+```

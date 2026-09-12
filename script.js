@@ -1546,30 +1546,17 @@ async function saveLocalResult(
 
     try {
 
-        const { data, error } =
-            await supabase
-                .from("worksheet_results")
-                .insert([
-                    {
-                        student_name: name,
-
-                        grade: String(grade),
-
-                        subject: String(subject),
-
-                        worksheet_id:
-                            selectedWorksheet?.id || null,
-
-                        worksheet_title:
-                            worksheet,
-
-                        score: score,
-
-                        total: total,
-
-                        percentage: percentage
-                    }
-                ]);
+   const { data, error } =
+    await supabase
+        .from("worksheet_results")
+        .insert([
+            {
+                student_name: name,
+                worksheet_name: worksheet,
+                score: score,
+                total_marks: total
+            }
+        ]);
 
 
         if (error) {

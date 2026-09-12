@@ -1483,7 +1483,7 @@ function showResult(
    14. SAVE LOCAL RESULT
    ========================================================= */
 
-function saveLocalResult(
+async function saveLocalResult(
     name,
     grade,
     subject,
@@ -1491,6 +1491,16 @@ function saveLocalResult(
     score,
     total
 ) {
+
+    // Percentage ગણતરી
+    const percentage = Math.round(
+        (score / total) * 100
+    );
+
+
+    // ==========================================
+    // 1. Browser Local Storageમાં Result Save
+    // ==========================================
 
     const oldResults =
         JSON.parse(
@@ -1514,6 +1524,8 @@ function saveLocalResult(
 
         total: total,
 
+        percentage: percentage,
+
         date:
             new Date().toLocaleString(
                 "en-IN"
@@ -1528,6 +1540,70 @@ function saveLocalResult(
     );
 
 
+    // ==========================================
+    // 2. Supabaseમાં Result Save
+    // ==========================================
+
+    try {
+
+        const { data, error } =
+            await supabase
+                .from("worksheet_results")
+                .insert([
+                    {
+                        student_name: name,
+
+                        grade: String(grade),
+
+                        subject: String(subject),
+
+                        worksheet_id:
+                            selectedWorksheet?.id || null,
+
+                        worksheet_title:
+                            worksheet,
+
+                        score: score,
+
+                        total: total,
+
+                        percentage: percentage
+                    }
+                ]);
+
+
+        if (error) {
+
+            console.error(
+                "Supabase Result Save Error:",
+                error
+            );
+
+            alert(
+                "Result browserમાં save થયો છે, પરંતુ Supabaseમાં save કરવામાં સમસ્યા આવી."
+            );
+
+            return;
+        }
+
+
+        console.log(
+            "Result successfully saved to Supabase:",
+            data
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Supabase Connection Error:",
+            error
+        );
+
+    }
+
+
+    // જૂની Worksheets બતાવો
     showOldWorksheets();
 
 }

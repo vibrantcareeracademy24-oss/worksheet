@@ -1,7 +1,6 @@
 /* =========================================================
    RAJNISH STUDY CENTRE
-   app.js
-   Main Worksheet System
+   MASTER WORKSHEET SYSTEM
    ========================================================= */
 
 
@@ -64,77 +63,49 @@ const subjects = [
 
 
 /* =========================================================
-   2. WORKSHEET DATA
+   2. MASTER WORKSHEET DATA
+   =========================================================
+   
+   ⭐ આગળથી નવી Worksheet મુખ્યત્વે અહીં ઉમેરવાની છે.
+
+   દરેક Worksheetમાં:
+   id
+   grade
+   subject
+   title
+   description
+   marks
+   time
+   icon
+   questions
+
+   questionsમાં 20 પ્રશ્નો મૂકી શકાય.
+   answer = સાચા optionનો નંબર
+   0 = પ્રથમ option
+   1 = બીજો option
+   2 = ત્રીજો option
+   3 = ચોથો option
+
    ========================================================= */
 
-/*
-   દરેક ધોરણ અને વિષય માટે Worksheet અહીંથી
-   control કરી શકાશે.
 
-   હાલમાં દરેક વિષય માટે Worksheet 01 રાખવામાં
-   આવી છે.
+const masterWorksheets = [
 
-   આગળ Master Worksheet systemમાં અહીંથી
-   વધુ Worksheets ઉમેરવામાં આવશે.
-*/
-
-const worksheets = [];
-
-
-for (let grade = 1; grade <= 5; grade++) {
-
-    subjects.forEach(subject => {
-
-        worksheets.push({
-
-            id: `grade-${grade}-${subject.id}-01`,
-
-            grade: String(grade),
-
-            subject: subject.id,
-
-            title: `${subject.name} Worksheet 01`,
-
-            description:
-                `ધોરણ ${grade} ${subject.name} માટે પ્રેક્ટિસ Worksheet`,
-
-            questions: 20,
-
-            marks: 20,
-
-            time: "20 મિનિટ",
-
-            icon: subject.icon
-
-        });
-
-    });
-
-}
-
-
-/* =========================================================
-   3. SAMPLE QUESTIONS
-   ========================================================= */
-
-/*
-   હાલમાં testing માટે sample questions છે.
-
-   Part 6માં દરેક ધોરણ + વિષય માટે
-   Master Worksheetના actual questions
-   અહીંથી load કરવામાં આવશે.
-*/
-
-const sampleQuestions = {
-
-
-    /* -----------------------------------------------------
+    /* =====================================================
        STANDARD 1
-    ----------------------------------------------------- */
+       ===================================================== */
 
-    "1": {
+    {
+        id: "grade-1-gujarati-01",
+        grade: "1",
+        subject: "gujarati",
+        title: "ગુજરાતી Worksheet 01",
+        description: "ધોરણ 1 ગુજરાતી માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "📖",
 
-        gujarati: [
+        questions: [
 
             {
                 q: "ગુજરાતી ભાષામાં સ્વર કેટલા છે?",
@@ -148,9 +119,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        math: [
+
+    {
+        id: "grade-1-math-01",
+        grade: "1",
+        subject: "math",
+        title: "ગણિત Worksheet 01",
+        description: "ધોરણ 1 ગણિત માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🔢",
+
+        questions: [
 
             {
                 q: "2 + 3 = ?",
@@ -164,9 +147,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        environment: [
+
+    {
+        id: "grade-1-environment-01",
+        grade: "1",
+        subject: "environment",
+        title: "પર્યાવરણ Worksheet 01",
+        description: "ધોરણ 1 પર્યાવરણ માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🌱",
+
+        questions: [
 
             {
                 q: "આપણે શ્વાસ લેવા માટે શું વાપરીએ છીએ?",
@@ -180,9 +175,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        english: [
+
+    {
+        id: "grade-1-english-01",
+        grade: "1",
+        subject: "english",
+        title: "English Worksheet 01",
+        description: "ધોરણ 1 English માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🔤",
+
+        questions: [
 
             {
                 q: "What is the first letter of English alphabet?",
@@ -196,9 +203,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        gk: [
+
+    {
+        id: "grade-1-gk-01",
+        grade: "1",
+        subject: "gk",
+        title: "સામાન્ય જ્ઞાન Worksheet 01",
+        description: "ધોરણ 1 સામાન્ય જ્ઞાન માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🌎",
+
+        questions: [
 
             {
                 q: "ભારતની રાજધાની કઈ છે?",
@@ -212,9 +231,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        hindi: [
+
+    {
+        id: "grade-1-hindi-01",
+        grade: "1",
+        subject: "hindi",
+        title: "હિન્દી Worksheet 01",
+        description: "ધોરણ 1 હિન્દી માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🅰️",
+
+        questions: [
 
             {
                 q: "हिन्दी वर्णमाला का पहला स्वर कौन सा है?",
@@ -228,9 +259,21 @@ const sampleQuestions = {
                 answer: 0
             }
 
-        ],
+        ]
+    },
 
-        computer: [
+
+    {
+        id: "grade-1-computer-01",
+        grade: "1",
+        subject: "computer",
+        title: "કમ્પ્યૂટર Worksheet 01",
+        description: "ધોરણ 1 કમ્પ્યૂટર માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "💻",
+
+        questions: [
 
             {
                 q: "કમ્પ્યૂટરનું મુખ્ય મગજ કોને કહેવાય છે?",
@@ -245,17 +288,24 @@ const sampleQuestions = {
             }
 
         ]
-
     },
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        STANDARD 2
-    ----------------------------------------------------- */
+       ===================================================== */
 
-    "2": {
+    {
+        id: "grade-2-gujarati-01",
+        grade: "2",
+        subject: "gujarati",
+        title: "ગુજરાતી Worksheet 01",
+        description: "ધોરણ 2 ગુજરાતી માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "📖",
 
-        gujarati: [
+        questions: [
 
             {
                 q: "‘આમ’ શબ્દમાં કેટલા અક્ષર છે?",
@@ -269,9 +319,21 @@ const sampleQuestions = {
                 answer: 0
             }
 
-        ],
+        ]
+    },
 
-        math: [
+
+    {
+        id: "grade-2-math-01",
+        grade: "2",
+        subject: "math",
+        title: "ગણિત Worksheet 01",
+        description: "ધોરણ 2 ગણિત માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🔢",
+
+        questions: [
 
             {
                 q: "10 + 5 = ?",
@@ -285,9 +347,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        environment: [
+
+    {
+        id: "grade-2-environment-01",
+        grade: "2",
+        subject: "environment",
+        title: "પર્યાવરણ Worksheet 01",
+        description: "ધોરણ 2 પર્યાવરણ માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🌱",
+
+        questions: [
 
             {
                 q: "છોડને વધવા માટે શું જરૂરી છે?",
@@ -301,9 +375,21 @@ const sampleQuestions = {
                 answer: 0
             }
 
-        ],
+        ]
+    },
 
-        english: [
+
+    {
+        id: "grade-2-english-01",
+        grade: "2",
+        subject: "english",
+        title: "English Worksheet 01",
+        description: "ધોરણ 2 English માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🔤",
+
+        questions: [
 
             {
                 q: "Choose the correct word.",
@@ -317,9 +403,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        gk: [
+
+    {
+        id: "grade-2-gk-01",
+        grade: "2",
+        subject: "gk",
+        title: "સામાન્ય જ્ઞાન Worksheet 01",
+        description: "ધોરણ 2 સામાન્ય જ્ઞાન માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🌎",
+
+        questions: [
 
             {
                 q: "ભારતનો રાષ્ટ્રીય પક્ષી કયો છે?",
@@ -333,9 +431,21 @@ const sampleQuestions = {
                 answer: 2
             }
 
-        ],
+        ]
+    },
 
-        hindi: [
+
+    {
+        id: "grade-2-hindi-01",
+        grade: "2",
+        subject: "hindi",
+        title: "હિન્દી Worksheet 01",
+        description: "ધોરણ 2 હિન્દી માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🅰️",
+
+        questions: [
 
             {
                 q: "‘आम’ क्या है?",
@@ -349,9 +459,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        computer: [
+
+    {
+        id: "grade-2-computer-01",
+        grade: "2",
+        subject: "computer",
+        title: "કમ્પ્યૂટર Worksheet 01",
+        description: "ધોરણ 2 કમ્પ્યૂટર માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "💻",
+
+        questions: [
 
             {
                 q: "Mouse નો ઉપયોગ શા માટે થાય છે?",
@@ -366,17 +488,24 @@ const sampleQuestions = {
             }
 
         ]
-
     },
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        STANDARD 3
-    ----------------------------------------------------- */
+       ===================================================== */
 
-    "3": {
+    {
+        id: "grade-3-gujarati-01",
+        grade: "3",
+        subject: "gujarati",
+        title: "ગુજરાતી Worksheet 01",
+        description: "ધોરણ 3 ગુજરાતી માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "📖",
 
-        gujarati: [
+        questions: [
 
             {
                 q: "‘સૂરજ’નો સમાનાર્થી શબ્દ કયો છે?",
@@ -390,9 +519,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        math: [
+
+    {
+        id: "grade-3-math-01",
+        grade: "3",
+        subject: "math",
+        title: "ગણિત Worksheet 01",
+        description: "ધોરણ 3 ગણિત માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🔢",
+
+        questions: [
 
             {
                 q: "25 + 15 = ?",
@@ -406,9 +547,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        environment: [
+
+    {
+        id: "grade-3-environment-01",
+        grade: "3",
+        subject: "environment",
+        title: "પર્યાવરણ Worksheet 01",
+        description: "ધોરણ 3 પર્યાવરણ માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🌱",
+
+        questions: [
 
             {
                 q: "છોડનો કયો ભાગ જમીનની અંદર હોય છે?",
@@ -422,9 +575,21 @@ const sampleQuestions = {
                 answer: 0
             }
 
-        ],
+        ]
+    },
 
-        english: [
+
+    {
+        id: "grade-3-english-01",
+        grade: "3",
+        subject: "english",
+        title: "English Worksheet 01",
+        description: "ધોરણ 3 English માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🔤",
+
+        questions: [
 
             {
                 q: "Choose the plural of 'Book'.",
@@ -438,9 +603,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        gk: [
+
+    {
+        id: "grade-3-gk-01",
+        grade: "3",
+        subject: "gk",
+        title: "સામાન્ય જ્ઞાન Worksheet 01",
+        description: "ધોરણ 3 સામાન્ય જ્ઞાન માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🌎",
+
+        questions: [
 
             {
                 q: "ભારતનું રાષ્ટ્રીય પ્રાણી કયું છે?",
@@ -454,9 +631,21 @@ const sampleQuestions = {
                 answer: 2
             }
 
-        ],
+        ]
+    },
 
-        hindi: [
+
+    {
+        id: "grade-3-hindi-01",
+        grade: "3",
+        subject: "hindi",
+        title: "હિન્દી Worksheet 01",
+        description: "ધોરણ 3 હિન્દી માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🅰️",
+
+        questions: [
 
             {
                 q: "‘जल’ का समानार्थी शब्द कौन सा है?",
@@ -470,9 +659,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        computer: [
+
+    {
+        id: "grade-3-computer-01",
+        grade: "3",
+        subject: "computer",
+        title: "કમ્પ્યૂટર Worksheet 01",
+        description: "ધોરણ 3 કમ્પ્યૂટર માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "💻",
+
+        questions: [
 
             {
                 q: "Keyboardમાં શું હોય છે?",
@@ -487,17 +688,24 @@ const sampleQuestions = {
             }
 
         ]
-
     },
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        STANDARD 4
-    ----------------------------------------------------- */
+       ===================================================== */
 
-    "4": {
+    {
+        id: "grade-4-gujarati-01",
+        grade: "4",
+        subject: "gujarati",
+        title: "ગુજરાતી Worksheet 01",
+        description: "ધોરણ 4 ગુજરાતી માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "📖",
 
-        gujarati: [
+        questions: [
 
             {
                 q: "‘સુંદર’નો સમાનાર્થી શબ્દ કયો છે?",
@@ -511,9 +719,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        math: [
+
+    {
+        id: "grade-4-math-01",
+        grade: "4",
+        subject: "math",
+        title: "ગણિત Worksheet 01",
+        description: "ધોરણ 4 ગણિત માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🔢",
+
+        questions: [
 
             {
                 q: "25 × 2 = ?",
@@ -527,9 +747,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        environment: [
+
+    {
+        id: "grade-4-environment-01",
+        grade: "4",
+        subject: "environment",
+        title: "પર્યાવરણ Worksheet 01",
+        description: "ધોરણ 4 પર્યાવરણ માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🌱",
+
+        questions: [
 
             {
                 q: "પૃથ્વી પર પાણીનો સૌથી મોટો સ્ત્રોત કયો છે?",
@@ -543,9 +775,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        english: [
+
+    {
+        id: "grade-4-english-01",
+        grade: "4",
+        subject: "english",
+        title: "English Worksheet 01",
+        description: "ધોરણ 4 English માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🔤",
+
+        questions: [
 
             {
                 q: "Choose the correct past tense of 'Go'.",
@@ -559,9 +803,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        gk: [
+
+    {
+        id: "grade-4-gk-01",
+        grade: "4",
+        subject: "gk",
+        title: "સામાન્ય જ્ઞાન Worksheet 01",
+        description: "ધોરણ 4 સામાન્ય જ્ઞાન માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🌎",
+
+        questions: [
 
             {
                 q: "ભારતનું રાષ્ટ્રીય ફૂલ કયું છે?",
@@ -575,9 +831,21 @@ const sampleQuestions = {
                 answer: 2
             }
 
-        ],
+        ]
+    },
 
-        hindi: [
+
+    {
+        id: "grade-4-hindi-01",
+        grade: "4",
+        subject: "hindi",
+        title: "હિન્દી Worksheet 01",
+        description: "ધોરણ 4 હિન્દી માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🅰️",
+
+        questions: [
 
             {
                 q: "‘सूर्य’ का समानार्थी शब्द कौन सा है?",
@@ -591,9 +859,21 @@ const sampleQuestions = {
                 answer: 0
             }
 
-        ],
+        ]
+    },
 
-        computer: [
+
+    {
+        id: "grade-4-computer-01",
+        grade: "4",
+        subject: "computer",
+        title: "કમ્પ્યૂટર Worksheet 01",
+        description: "ધોરણ 4 કમ્પ્યૂટર માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "💻",
+
+        questions: [
 
             {
                 q: "CPU નું સંપૂર્ણ નામ શું છે?",
@@ -618,17 +898,24 @@ const sampleQuestions = {
             }
 
         ]
-
     },
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        STANDARD 5
-    ----------------------------------------------------- */
+       ===================================================== */
 
-    "5": {
+    {
+        id: "grade-5-gujarati-01",
+        grade: "5",
+        subject: "gujarati",
+        title: "ગુજરાતી Worksheet 01",
+        description: "ધોરણ 5 ગુજરાતી માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "📖",
 
-        gujarati: [
+        questions: [
 
             {
                 q: "‘વિશાળ’નો સમાનાર્થી શબ્દ કયો છે?",
@@ -642,9 +929,21 @@ const sampleQuestions = {
                 answer: 0
             }
 
-        ],
+        ]
+    },
 
-        math: [
+
+    {
+        id: "grade-5-math-01",
+        grade: "5",
+        subject: "math",
+        title: "ગણિત Worksheet 01",
+        description: "ધોરણ 5 ગણિત માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🔢",
+
+        questions: [
 
             {
                 q: "125 + 75 = ?",
@@ -658,13 +957,30 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        environment: [
+
+    {
+        id: "grade-5-environment-01",
+        grade: "5",
+        subject: "environment",
+        title: "પર્યાવરણ Worksheet 01",
+        description: "ધોરણ 5 પર્યાવરણ માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🌱",
+
+        questions: [
 
             {
                 q: "વાતાવરણમાં સૌથી વધુ પ્રમાણમાં કયો વાયુ છે?",
-                options: ["ઓક્સિજન", "નાઇટ્રોજન", "કાર્બન ડાયોક્સાઇડ", "હાઇડ્રોજન"],
+                options: [
+                    "ઓક્સિજન",
+                    "નાઇટ્રોજન",
+                    "કાર્બન ડાયોક્સાઇડ",
+                    "હાઇડ્રોજન"
+                ],
                 answer: 1
             },
 
@@ -679,13 +995,30 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        english: [
+
+    {
+        id: "grade-5-english-01",
+        grade: "5",
+        subject: "english",
+        title: "English Worksheet 01",
+        description: "ધોરણ 5 English માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🔤",
+
+        questions: [
 
             {
                 q: "Choose the correct plural of 'Child'.",
-                options: ["Childs", "Children", "Childes", "Childrens"],
+                options: [
+                    "Childs",
+                    "Children",
+                    "Childes",
+                    "Childrens"
+                ],
                 answer: 1
             },
 
@@ -700,9 +1033,21 @@ const sampleQuestions = {
                 answer: 1
             }
 
-        ],
+        ]
+    },
 
-        gk: [
+
+    {
+        id: "grade-5-gk-01",
+        grade: "5",
+        subject: "gk",
+        title: "સામાન્ય જ્ઞાન Worksheet 01",
+        description: "ધોરણ 5 સામાન્ય જ્ઞાન માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🌎",
+
+        questions: [
 
             {
                 q: "ભારતના રાષ્ટ્રીય ગીતનું નામ શું છે?",
@@ -726,9 +1071,21 @@ const sampleQuestions = {
                 answer: 2
             }
 
-        ],
+        ]
+    },
 
-        hindi: [
+
+    {
+        id: "grade-5-hindi-01",
+        grade: "5",
+        subject: "hindi",
+        title: "હિન્દી Worksheet 01",
+        description: "ધોરણ 5 હિન્દી માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "🅰️",
+
+        questions: [
 
             {
                 q: "‘सत्य’ का विलोम शब्द क्या है?",
@@ -742,9 +1099,21 @@ const sampleQuestions = {
                 answer: 0
             }
 
-        ],
+        ]
+    },
 
-        computer: [
+
+    {
+        id: "grade-5-computer-01",
+        grade: "5",
+        subject: "computer",
+        title: "કમ્પ્યૂટર Worksheet 01",
+        description: "ધોરણ 5 કમ્પ્યૂટર માટે પ્રેક્ટિસ Worksheet",
+        marks: 20,
+        time: "20 મિનિટ",
+        icon: "💻",
+
+        questions: [
 
             {
                 q: "RAM નું સંપૂર્ણ નામ શું છે?",
@@ -769,10 +1138,32 @@ const sampleQuestions = {
             }
 
         ]
-
     }
 
-};
+];
+
+
+/* =========================================================
+   3. WORKSHEET LIST
+   =========================================================
+   UI માટે master dataમાંથી worksheet list બનાવાશે.
+   ========================================================= */
+
+const worksheets = masterWorksheets.map(worksheet => {
+
+    return {
+        id: worksheet.id,
+        grade: worksheet.grade,
+        subject: worksheet.subject,
+        title: worksheet.title,
+        description: worksheet.description,
+        questions: worksheet.questions.length,
+        marks: worksheet.marks,
+        time: worksheet.time,
+        icon: worksheet.icon
+    };
+
+});
 
 
 /* =========================================================
@@ -780,7 +1171,9 @@ const sampleQuestions = {
    ========================================================= */
 
 let selectedGrade = null;
+
 let selectedSubject = null;
+
 let selectedWorksheet = null;
 
 
@@ -855,6 +1248,7 @@ function setupStandardButtons() {
     const buttons =
         document.querySelectorAll(".standard-card");
 
+
     buttons.forEach(button => {
 
         button.addEventListener("click", () => {
@@ -863,18 +1257,26 @@ function setupStandardButtons() {
                 button.dataset.standard;
 
             selectedSubject = null;
+
             selectedWorksheet = null;
 
+
             buttons.forEach(item => {
+
                 item.classList.remove("active");
+
             });
 
+
             button.classList.add("active");
+
 
             studentStandard.value =
                 selectedGrade;
 
+
             showSubjects();
+
 
             worksheetSection.classList.add("hidden");
 
@@ -882,9 +1284,13 @@ function setupStandardButtons() {
 
             resultArea.classList.add("hidden");
 
+
             subjectSection.scrollIntoView({
+
                 behavior: "smooth",
+
                 block: "start"
+
             });
 
         });
@@ -902,10 +1308,12 @@ function showSubjects() {
 
     subjectList.innerHTML = "";
 
+
     subjects.forEach(subject => {
 
         const card =
             document.createElement("button");
+
 
         card.type = "button";
 
@@ -913,6 +1321,7 @@ function showSubjects() {
 
         card.dataset.subject =
             subject.id;
+
 
         card.innerHTML = `
 
@@ -930,26 +1339,34 @@ function showSubjects() {
 
         `;
 
+
         card.addEventListener("click", () => {
 
             selectedSubject =
                 subject.id;
 
+
             document
                 .querySelectorAll(".subject-card")
                 .forEach(item => {
+
                     item.classList.remove("active");
+
                 });
 
+
             card.classList.add("active");
+
 
             showWorksheets();
 
         });
 
+
         subjectList.appendChild(card);
 
     });
+
 
     subjectSection.classList.remove("hidden");
 
@@ -964,10 +1381,12 @@ function showWorksheets() {
 
     worksheetList.innerHTML = "";
 
+
     const filteredWorksheets =
         worksheets.filter(item =>
 
             item.grade === selectedGrade &&
+
             item.subject === selectedSubject
 
         );
@@ -976,14 +1395,20 @@ function showWorksheets() {
     if (filteredWorksheets.length === 0) {
 
         worksheetList.innerHTML = `
+
             <div class="empty-message">
                 હાલમાં કોઈ Worksheet ઉપલબ્ધ નથી.
             </div>
+
         `;
 
-        worksheetSection.classList.remove("hidden");
+
+        worksheetSection.classList.remove(
+            "hidden"
+        );
 
         return;
+
     }
 
 
@@ -991,6 +1416,7 @@ function showWorksheets() {
 
         const card =
             document.createElement("div");
+
 
         card.className =
             "worksheet-card";
@@ -1039,11 +1465,17 @@ function showWorksheets() {
     });
 
 
-    worksheetSection.classList.remove("hidden");
+    worksheetSection.classList.remove(
+        "hidden"
+    );
+
 
     worksheetSection.scrollIntoView({
+
         behavior: "smooth",
+
         block: "start"
+
     });
 
 }
@@ -1055,33 +1487,62 @@ function showWorksheets() {
 
 function openWorksheet(worksheet) {
 
+    const masterWorksheet =
+        masterWorksheets.find(
+            item => item.id === worksheet.id
+        );
+
+
+    if (!masterWorksheet) {
+
+        alert(
+            "Worksheet data મળી શક્યો નથી."
+        );
+
+        return;
+
+    }
+
+
     selectedWorksheet =
-        worksheet;
+        masterWorksheet;
+
 
     worksheetTitle.textContent =
-        worksheet.title;
+        masterWorksheet.title;
+
 
     worksheetDescription.textContent =
-        worksheet.description;
+        masterWorksheet.description;
+
 
     worksheetMarks.textContent =
-        `${worksheet.marks} ગુણ`;
+        `${masterWorksheet.marks} ગુણ`;
+
 
     worksheetQuestions.textContent =
-        `${worksheet.questions} પ્રશ્નો`;
+        `${masterWorksheet.questions.length} પ્રશ્નો`;
 
 
-    resultArea.classList.add("hidden");
+    resultArea.classList.add(
+        "hidden"
+    );
+
 
     loadQuestions();
 
 
-    worksheetArea.classList.remove("hidden");
+    worksheetArea.classList.remove(
+        "hidden"
+    );
 
 
     worksheetArea.scrollIntoView({
+
         behavior: "smooth",
+
         block: "start"
+
     });
 
 }
@@ -1096,14 +1557,10 @@ function loadQuestions() {
     questionsContainer.innerHTML = "";
 
 
-    const gradeQuestions =
-        sampleQuestions[selectedGrade];
-
-
-    if (!gradeQuestions) {
+    if (!selectedWorksheet) {
 
         showQuestionMessage(
-            "આ ધોરણ માટે પ્રશ્નો ઉપલબ્ધ નથી."
+            "Worksheet પસંદ કરવામાં આવી નથી."
         );
 
         return;
@@ -1111,15 +1568,17 @@ function loadQuestions() {
     }
 
 
-    let questions =
+    const questions =
+        selectedWorksheet.questions;
 
-        gradeQuestions[selectedSubject];
 
-
-    if (!questions || questions.length === 0) {
+    if (
+        !questions ||
+        questions.length === 0
+    ) {
 
         showQuestionMessage(
-            "આ વિષય માટે હાલમાં પ્રશ્નો ઉપલબ્ધ નથી."
+            "આ Worksheet માટે પ્રશ્નો ઉપલબ્ધ નથી."
         );
 
         return;
@@ -1128,21 +1587,23 @@ function loadQuestions() {
 
 
     /*
-       હાલમાં sampleમાં 2 પ્રશ્નો છે.
+       Testing માટે જો 20થી ઓછા પ્રશ્નો હોય
+       તો પ્રશ્નો repeat થશે.
 
-       20 પ્રશ્નોની testing structure માટે
-       sample questions repeat કરવામાં આવે છે.
-
-       Part 6માં actual 20 questions
-       મૂકવામાં આવશે.
+       ⭐ જ્યારે તમે 20 actual questions આપશો,
+       ત્યારે 20 અલગ પ્રશ્નો જ દેખાશે.
     */
 
     const finalQuestions = [];
 
 
+    const totalQuestions =
+        selectedWorksheet.marks || 20;
+
+
     for (
         let i = 0;
-        i < 20;
+        i < totalQuestions;
         i++
     ) {
 
@@ -1158,6 +1619,7 @@ function loadQuestions() {
 
             const questionDiv =
                 document.createElement("div");
+
 
             questionDiv.className =
                 "question";
@@ -1290,48 +1752,18 @@ function submitWorksheetResult() {
         document.querySelectorAll(".question");
 
 
-    let score = 0;
-
-    let answered = 0;
-
-
-    allQuestions.forEach(
-        (questionDiv, index) => {
-
-            const selected =
-                questionDiv.querySelector(
-                    `input[name="question-${index}"]:checked`
-                );
-
-
-            if (selected) {
-
-                answered++;
-
-            }
-
-        }
-    );
-
-
-    /*
-       Current sample questions
-       */
-
-    const questions =
-        sampleQuestions[selectedGrade]
-        ?. [selectedSubject];
-
-
-    if (!questions) {
+    if (allQuestions.length === 0) {
 
         alert(
-            "પ્રશ્નો ઉપલબ્ધ નથી."
+            "Worksheetમાં પ્રશ્નો ઉપલબ્ધ નથી."
         );
 
         return;
 
     }
+
+
+    let score = 0;
 
 
     allQuestions.forEach(
@@ -1350,8 +1782,14 @@ function submitWorksheetResult() {
             }
 
 
+            const questions =
+                selectedWorksheet.questions;
+
+
             const question =
-                questions[index % questions.length];
+                questions[
+                    index % questions.length
+                ];
 
 
             const selectedAnswer =
@@ -1360,7 +1798,7 @@ function submitWorksheetResult() {
 
             if (
                 selectedAnswer ===
-                question.answer
+                Number(question.answer)
             ) {
 
                 score++;
@@ -1387,13 +1825,6 @@ function submitWorksheetResult() {
         percentage,
         name
     );
-
-
-    /*
-       આગળ Supabase Partમાં અહીં
-       result save કરવાની function
-       જોડવામાં આવશે.
-    */
 
 }
 
@@ -1455,32 +1886,35 @@ function showResult(
 
 
     resultArea.scrollIntoView({
+
         behavior: "smooth",
+
         block: "center"
+
     });
 
 
-    /*
-       Local browser history
-
-       Supabase આવ્યા પછી
-       permanent result databaseમાં save થશે.
-    */
-
     saveLocalResult(
+
         name,
+
         selectedGrade,
+
         selectedSubject,
+
         selectedWorksheet.title,
+
         score,
+
         total
+
     );
 
 }
 
 
 /* =========================================================
-   14. SAVE LOCAL RESULT
+   14. SAVE RESULT
    ========================================================= */
 
 async function saveLocalResult(
@@ -1492,21 +1926,23 @@ async function saveLocalResult(
     total
 ) {
 
-    // Percentage ગણતરી
-    const percentage = Math.round(
-        (score / total) * 100
-    );
+    const percentage =
+        Math.round(
+            (score / total) * 100
+        );
 
 
-    // ==========================================
-    // 1. Browser Local Storageમાં Result Save
-    // ==========================================
+    /* ==========================================
+       1. LOCAL STORAGE
+       ========================================== */
 
     const oldResults =
         JSON.parse(
+
             localStorage.getItem(
                 "rajnishResults"
             ) || "[]"
+
         );
 
 
@@ -1535,52 +1971,68 @@ async function saveLocalResult(
 
 
     localStorage.setItem(
+
         "rajnishResults",
+
         JSON.stringify(oldResults)
+
     );
 
 
-    // ==========================================
-    // 2. Supabaseમાં Result Save
-    // ==========================================
+    /* ==========================================
+       2. SUPABASE
+       ========================================== */
 
     try {
 
-   const { data, error } =
-    await supabase
-        .from("worksheet_results")
-        .insert([
-            {
-                student_name: name,
-                worksheet_name: worksheet,
-                score: score,
-                total_marks: total
+        /*
+           જો Supabase client ઉપલબ્ધ હોય
+           તો databaseમાં result save થશે.
+        */
+
+        if (
+            typeof supabase !== "undefined"
+        ) {
+
+            const { data, error } =
+                await supabase
+                    .from("worksheet_results")
+                    .insert([
+                        {
+                            student_name: name,
+                            worksheet_name: worksheet,
+                            score: score,
+                            total_marks: total
+                        }
+                    ]);
+
+
+            if (error) {
+
+                console.error(
+                    "Supabase Result Save Error:",
+                    error
+                );
+
+                console.log(
+                    "Result browserમાં Local Storageમાં save થયો છે."
+                );
+
+                return;
+
             }
-        ]);
 
 
-        if (error) {
-
-            console.error(
-                "Supabase Result Save Error:",
-                error
+            console.log(
+                "Result successfully saved to Supabase:",
+                data
             );
 
-            alert(
-                "Result browserમાં save થયો છે, પરંતુ Supabaseમાં save કરવામાં સમસ્યા આવી."
-            );
-
-            return;
         }
 
+    }
 
-        console.log(
-            "Result successfully saved to Supabase:",
-            data
-        );
-
-
-    } catch (error) {
+    catch (error) {
 
         console.error(
             "Supabase Connection Error:",
@@ -1590,7 +2042,10 @@ async function saveLocalResult(
     }
 
 
-    // જૂની Worksheets બતાવો
+    /* ==========================================
+       3. OLD RESULTS REFRESH
+       ========================================== */
+
     showOldWorksheets();
 
 }
@@ -1602,11 +2057,18 @@ async function saveLocalResult(
 
 function showOldWorksheets() {
 
+    if (!oldWorksheets) {
+        return;
+    }
+
+
     const results =
         JSON.parse(
+
             localStorage.getItem(
                 "rajnishResults"
             ) || "[]"
+
         );
 
 
@@ -1631,10 +2093,6 @@ function showOldWorksheets() {
     oldWorksheets.innerHTML = "";
 
 
-    /*
-       Latest result first
-    */
-
     const reversedResults =
         [...results].reverse();
 
@@ -1644,6 +2102,7 @@ function showOldWorksheets() {
 
             const div =
                 document.createElement("div");
+
 
             div.className =
                 "old-worksheet-item";
@@ -1693,11 +2152,16 @@ function retryCurrentWorksheet() {
         "hidden"
     );
 
+
     loadQuestions();
 
+
     questionsContainer.scrollIntoView({
+
         behavior: "smooth",
+
         block: "start"
+
     });
 
 }
@@ -1710,8 +2174,11 @@ function retryCurrentWorksheet() {
 if (submitWorksheet) {
 
     submitWorksheet.addEventListener(
+
         "click",
+
         submitWorksheetResult
+
     );
 
 }
@@ -1720,8 +2187,11 @@ if (submitWorksheet) {
 if (retryWorksheet) {
 
     retryWorksheet.addEventListener(
+
         "click",
+
         retryCurrentWorksheet
+
     );
 
 }
@@ -1745,6 +2215,9 @@ function initializeApp() {
    ========================================================= */
 
 document.addEventListener(
+
     "DOMContentLoaded",
+
     initializeApp
+
 );

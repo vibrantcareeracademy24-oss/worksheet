@@ -2,228 +2,471 @@
 <html lang="gu">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Rajnish Study Worksheet</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+          content="Rajnish Study Centre - ધોરણ 1 થી 5 માટે મફત Online Worksheet">
+
+    <title>Rajnish Study Centre | Online Worksheet</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-    <header class="header">
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-        <div class="logo-area">
-            <div class="logo">📚</div>
+    <header class="site-header">
 
-            <div>
-                <h1>Rajnish Study</h1>
-                <p>Fun Learning • Smart Learning</p>
+        <div class="header-inner">
+
+            <!-- Logo -->
+            <div class="brand">
+
+                <div class="logo-box">
+                    📚
+                </div>
+
+                <div class="brand-text">
+                    <h1>RAJNISH STUDY CENTRE</h1>
+                    <p>Free Online Worksheet</p>
+                </div>
+
             </div>
-        </div>
 
-        <div class="header-icon">
-            🎓
         </div>
 
     </header>
 
 
-    <!-- ================= HERO ================= -->
-    <section class="hero">
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
 
-        <div class="hero-content">
+    <main class="container">
 
-            <h2>🌟 Welcome to Worksheet World!</h2>
+        <!-- Welcome Section -->
+        <section class="welcome-section">
 
-            <p>
-                ધોરણ 1 થી 5 માટે સુંદર અને મજેદાર Online Worksheets
-            </p>
-
-            <div class="hero-buttons">
-                <button onclick="scrollToWorksheets()">
-                    🚀 Start Learning
-                </button>
-            </div>
-
-        </div>
-
-        <div class="hero-image">
-            🧒📖✏️
-        </div>
-
-    </section>
-
-
-    <!-- ================= FILTER SECTION ================= -->
-
-    <section class="filter-section" id="worksheets">
-
-        <h2>📖 Choose Your Worksheet</h2>
-
-        <!-- Search -->
-        <div class="search-box">
-
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="🔍 Worksheet શોધો..."
-                oninput="filterWorksheets()"
-            >
-
-        </div>
-
-
-        <!-- Standard Filter -->
-        <div class="filter-group">
-
-            <h3>🎓 ધોરણ પસંદ કરો</h3>
-
-            <div class="filter-buttons">
-
-                <button
-                    class="grade-btn active"
-                    data-grade="all"
-                    onclick="setGrade('all', this)">
-                    બધા
-                </button>
-
-                <button
-                    class="grade-btn"
-                    data-grade="1"
-                    onclick="setGrade('1', this)">
-                    ધોરણ 1
-                </button>
-
-                <button
-                    class="grade-btn"
-                    data-grade="2"
-                    onclick="setGrade('2', this)">
-                    ધોરણ 2
-                </button>
-
-                <button
-                    class="grade-btn"
-                    data-grade="3"
-                    onclick="setGrade('3', this)">
-                    ધોરણ 3
-                </button>
-
-                <button
-                    class="grade-btn"
-                    data-grade="4"
-                    onclick="setGrade('4', this)">
-                    ધોરણ 4
-                </button>
-
-                <button
-                    class="grade-btn"
-                    data-grade="5"
-                    onclick="setGrade('5', this)">
-                    ધોરણ 5
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- Subject Filter -->
-        <div class="filter-group">
-
-            <h3>📚 વિષય પસંદ કરો</h3>
-
-            <div class="filter-buttons">
-
-                <button
-                    class="subject-btn active"
-                    data-subject="all"
-                    onclick="setSubject('all', this)">
-                    બધા વિષય
-                </button>
-
-                <button
-                    class="subject-btn"
-                    data-subject="gujarati"
-                    onclick="setSubject('gujarati', this)">
-                    ગુજરાતી
-                </button>
-
-                <button
-                    class="subject-btn"
-                    data-subject="english"
-                    onclick="setSubject('english', this)">
-                    English
-                </button>
-
-                <button
-                    class="subject-btn"
-                    data-subject="math"
-                    onclick="setSubject('math', this)">
-                    ગણિત
-                </button>
-
-                <button
-                    class="subject-btn"
-                    data-subject="environment"
-                    onclick="setSubject('environment', this)">
-                    પર્યાવરણ
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= WORKSHEET CONTAINER ================= -->
-
-    <main>
-
-        <div
-            class="worksheet-grid"
-            id="worksheetContainer">
-        </div>
-
-        <!-- No Result -->
-        <div
-            id="noResult"
-            class="no-result"
-            style="display:none;">
-
-            😔
-
-            <h3>Worksheet મળી નથી</h3>
+            <h2>🎓 Welcome to Rajnish Study Centre</h2>
 
             <p>
-                કૃપા કરીને બીજું ધોરણ અથવા વિષય પસંદ કરો.
+                ધોરણ 1 થી 5 માટે મફત Online Worksheet
             </p>
 
-        </div>
+            <p class="welcome-small">
+                ધોરણ પસંદ કરો → વિષય પસંદ કરો → Worksheet પસંદ કરો
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             STEP 1 : STANDARD
+        ================================================== -->
+
+        <section class="selection-section">
+
+            <div class="section-title">
+
+                <span class="step-number">1</span>
+
+                <div>
+                    <h2>ધોરણ પસંદ કરો</h2>
+                    <p>Select Standard</p>
+                </div>
+
+            </div>
+
+
+            <div id="standardList" class="standard-grid">
+
+                <!-- Standard 1 -->
+                <button
+                    type="button"
+                    class="standard-card"
+                    data-standard="1">
+
+                    <span class="standard-icon">👦</span>
+
+                    <strong>ધોરણ 1</strong>
+
+                    <small>Standard 1</small>
+
+                </button>
+
+
+                <!-- Standard 2 -->
+                <button
+                    type="button"
+                    class="standard-card"
+                    data-standard="2">
+
+                    <span class="standard-icon">👧</span>
+
+                    <strong>ધોરણ 2</strong>
+
+                    <small>Standard 2</small>
+
+                </button>
+
+
+                <!-- Standard 3 -->
+                <button
+                    type="button"
+                    class="standard-card"
+                    data-standard="3">
+
+                    <span class="standard-icon">🧒</span>
+
+                    <strong>ધોરણ 3</strong>
+
+                    <small>Standard 3</small>
+
+                </button>
+
+
+                <!-- Standard 4 -->
+                <button
+                    type="button"
+                    class="standard-card"
+                    data-standard="4">
+
+                    <span class="standard-icon">👨‍🎓</span>
+
+                    <strong>ધોરણ 4</strong>
+
+                    <small>Standard 4</small>
+
+                </button>
+
+
+                <!-- Standard 5 -->
+                <button
+                    type="button"
+                    class="standard-card"
+                    data-standard="5">
+
+                    <span class="standard-icon">🎓</span>
+
+                    <strong>ધોરણ 5</strong>
+
+                    <small>Standard 5</small>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STEP 2 : SUBJECT
+        ================================================== -->
+
+        <section
+            id="subjectSection"
+            class="selection-section hidden">
+
+            <div class="section-title">
+
+                <span class="step-number">2</span>
+
+                <div>
+                    <h2>વિષય પસંદ કરો</h2>
+                    <p>Select Subject</p>
+                </div>
+
+            </div>
+
+
+            <div id="subjectList" class="subject-grid">
+
+                <!-- JavaScript will load subjects here -->
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STEP 3 : WORKSHEET
+        ================================================== -->
+
+        <section
+            id="worksheetSection"
+            class="selection-section hidden">
+
+            <div class="section-title">
+
+                <span class="step-number">3</span>
+
+                <div>
+                    <h2>Worksheet પસંદ કરો</h2>
+                    <p>Select Worksheet</p>
+                </div>
+
+            </div>
+
+
+            <div id="worksheetList" class="worksheet-grid">
+
+                <!-- JavaScript will load worksheets here -->
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SELECTED WORKSHEET AREA
+        ================================================== -->
+
+        <section
+            id="worksheetArea"
+            class="worksheet-area hidden">
+
+            <!-- Worksheet Header -->
+
+            <div class="worksheet-header">
+
+                <div>
+
+                    <h2 id="worksheetTitle">
+                        Worksheet
+                    </h2>
+
+                    <p id="worksheetDescription">
+                        Online Practice Worksheet
+                    </p>
+
+                </div>
+
+                <div class="worksheet-info">
+
+                    <span id="worksheetMarks">
+                        20 ગુણ
+                    </span>
+
+                    <span id="worksheetQuestions">
+                        20 પ્રશ્નો
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Student Information -->
+
+            <div class="student-information">
+
+                <h3>👨‍🎓 વિદ્યાર્થીની માહિતી</h3>
+
+
+                <div class="student-form">
+
+                    <div class="form-group">
+
+                        <label for="studentName">
+                            વિદ્યાર્થીનું નામ
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentName"
+                            name="studentName"
+                            placeholder="તમારું નામ લખો"
+                            autocomplete="name">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="studentStandard">
+                            ધોરણ
+                        </label>
+
+                        <select
+                            id="studentStandard"
+                            name="studentStandard">
+
+                            <option value="">
+                                ધોરણ પસંદ કરો
+                            </option>
+
+                            <option value="1">
+                                ધોરણ 1
+                            </option>
+
+                            <option value="2">
+                                ધોરણ 2
+                            </option>
+
+                            <option value="3">
+                                ધોરણ 3
+                            </option>
+
+                            <option value="4">
+                                ધોરણ 4
+                            </option>
+
+                            <option value="5">
+                                ધોરણ 5
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Questions -->
+
+            <div class="questions-container">
+
+                <h3>📝 પ્રશ્નો</h3>
+
+                <div id="questions">
+
+                    <!-- Questions will be loaded by app.js -->
+
+                </div>
+
+            </div>
+
+
+            <!-- Submit -->
+
+            <div class="submit-area">
+
+                <button
+                    type="button"
+                    id="submitWorksheet"
+                    class="submit-button">
+
+                    ✅ Worksheet Submit કરો
+
+                </button>
+
+            </div>
+
+
+            <!-- Result -->
+
+            <div
+                id="resultArea"
+                class="result-area hidden">
+
+                <div class="result-icon">
+                    🏆
+                </div>
+
+                <h2>તમારું Result</h2>
+
+                <div
+                    id="resultMarks"
+                    class="result-marks">
+
+                    0 / 20
+
+                </div>
+
+                <p id="resultMessage">
+                    ખૂબ સરસ!
+                </p>
+
+
+                <button
+                    type="button"
+                    id="retryWorksheet"
+                    class="retry-button">
+
+                    🔄 ફરીથી Worksheet આપો
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             OLD WORKSHEETS
+        ================================================== -->
+
+        <section class="old-worksheets-section">
+
+            <div class="section-title">
+
+                <span class="step-number">📚</span>
+
+                <div>
+                    <h2>જૂની Worksheets</h2>
+                    <p>Previous Worksheets</p>
+                </div>
+
+            </div>
+
+
+            <div
+                id="oldWorksheets"
+                class="old-worksheets-list">
+
+                <p class="empty-message">
+                    Worksheet પસંદ કર્યા પછી અહીં જૂની Worksheets
+                    દેખાશે.
+                </p>
+
+            </div>
+
+        </section>
+
 
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
-    <footer>
+    <footer class="site-footer">
 
-        <h3>📚 Rajnish Study</h3>
+        <div class="footer-inner">
 
-        <p>
-            Learn • Practice • Improve
-        </p>
+            <h3>📚 RAJNISH STUDY CENTRE</h3>
 
-        <p class="copyright">
-            © 2026 Rajnish Study. All Rights Reserved.
-        </p>
+            <p>
+                Free Education for Every Child
+            </p>
+
+            <p class="copyright">
+                © 2026 Rajnish Study Centre
+            </p>
+
+        </div>
 
     </footer>
 
 
-    <script src="script.js"></script>
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <!-- Supabase configuration -->
+    <script src="config.js"></script>
+
+    <!-- Main application -->
+    <script src="app.js"></script>
 
 </body>
 </html>

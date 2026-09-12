@@ -1,3 +1,3 @@
 const SUPABASE_URL = "https://kathxxseycwncamlciab.supabase.co";
 
-const SUPABASE_ANON_KEY = "kathxxseycwncamlciab";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImthdGh4eHNleWN3bmNhbWxjaWFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg1MDUxODYsImV4cCI6MjEwNDA4MTE4Nn0.E21E2Bp3ecXaZDaFzzqi0Qzp7kJswozHuPUslZSUwCI";

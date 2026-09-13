@@ -1452,12 +1452,17 @@ function showWorksheets() {
 
 
         card
-            .querySelector("button")
-            .addEventListener("click", () => {
+    .querySelector("button")
+    .addEventListener("click", () => {
 
-                openWorksheet(worksheet);
+        if (worksheet.id === "grade-3-math-02") {
+            window.location.href = "worksheet-03-math-02.html";
+            return;
+        }
 
-            });
+        openWorksheet(worksheet);
+
+    });
 
 
         worksheetList.appendChild(card);

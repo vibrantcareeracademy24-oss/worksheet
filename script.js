@@ -523,11 +523,29 @@ const masterWorksheets = [
     },
 
 
-    {
-        id: "grade-3-math-01",
-        grade: "3",
-        subject: "math",
-        title: "ગણિત Worksheet 01",
+   {
+    id: "grade-3-math-01",
+    grade: "3",
+    subject: "math",
+    title: "ગણિત Worksheet 01",
+    ...
+    questions: [
+        ...
+    ]
+},
+
+
+{
+    id: "grade-3-math-02",
+    grade: "3",
+    subject: "math",
+    title: "ગણિત Worksheet 02",
+    description: "પાઠ 2 – સંખ્યાની ગમ્મત",
+    marks: 20,
+    time: "20 મિનિટ",
+    icon: "🔢",
+    questions: []
+},
         description: "ધોરણ 3 ગણિત માટે પ્રેક્ટિસ Worksheet",
         marks: 20,
         time: "20 મિનિટ",

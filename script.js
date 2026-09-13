@@ -523,29 +523,11 @@ const masterWorksheets = [
     },
 
 
-   {
-    id: "grade-3-math-01",
-    grade: "3",
-    subject: "math",
-    title: "ગણિત Worksheet 01",
-    ...
-    questions: [
-        ...
-    ]
-},
-
-
-{
-    id: "grade-3-math-02",
-    grade: "3",
-    subject: "math",
-    title: "ગણિત Worksheet 02",
-    description: "પાઠ 2 – સંખ્યાની ગમ્મત",
-    marks: 20,
-    time: "20 મિનિટ",
-    icon: "🔢",
-    questions: []
-},
+    {
+        id: "grade-3-math-01",
+        grade: "3",
+        subject: "math",
+        title: "ગણિત Worksheet 01",
         description: "ધોરણ 3 ગણિત માટે પ્રેક્ટિસ Worksheet",
         marks: 20,
         time: "20 મિનિટ",
@@ -1470,17 +1452,12 @@ function showWorksheets() {
 
 
         card
-    .querySelector("button")
-    .addEventListener("click", () => {
+            .querySelector("button")
+            .addEventListener("click", () => {
 
-        if (worksheet.id === "grade-3-math-02") {
-            window.location.href = "worksheet-03-math-02.html";
-            return;
-        }
+                openWorksheet(worksheet);
 
-        openWorksheet(worksheet);
-
-    });
+            });
 
 
         worksheetList.appendChild(card);
